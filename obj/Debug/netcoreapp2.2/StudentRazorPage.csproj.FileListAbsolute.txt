@@ -28,3 +28,5 @@ C:\Users\mahbub\Desktop\StudentRazorPage\obj\Debug\netcoreapp2.2\StudentRazorPag
 C:\Users\mahbub\Desktop\StudentRazorPage\obj\Debug\netcoreapp2.2\StudentRazorPage.dll
 C:\Users\mahbub\Desktop\StudentRazorPage\obj\Debug\netcoreapp2.2\StudentRazorPage.pdb
 C:\Users\mahbub\Desktop\StudentRazorPage\obj\Debug\netcoreapp2.2\StudentRazorPage.csproj.CopyComplete
+C:\Users\mahbub\Desktop\StudentRazorPage\obj\Debug\netcoreapp2.2\Razor\Pages\StudentList\Create.g.cshtml.cs
+C:\Users\mahbub\Desktop\StudentRazorPage\obj\Debug\netcoreapp2.2\Razor\Pages\StudentList\Index.g.cshtml.cs

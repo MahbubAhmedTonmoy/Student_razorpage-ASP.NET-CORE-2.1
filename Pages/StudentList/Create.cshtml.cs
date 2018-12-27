@@ -4,38 +4,41 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
 using StudentRazorPage.Model;
 
 namespace StudentRazorPage.Pages.StudentList
 {
-    public class IndexModel : PageModel
+public class CreateModel : PageModel
     {
+        
         private readonly ApplicationDbContext _db;
 
         [TempData]
         public string Message { get; set; }
 
-        public IEnumerable<Student> students { get; set; }
-
-
-        public IndexModel(ApplicationDbContext db)
+        public CreateModel(ApplicationDbContext db)
         {
             _db = db;
         }
 
-        public async Task OnGet()
+        [BindProperty]
+        public Student Student { get; set; }
+
+        public void OnGet()
         {
-            students = await _db.students.ToListAsync();
+
         }
-        public async Task<IActionResult> OnPostDelete(int id)
+
+        public async Task<IActionResult> OnPost()
         {
-            var st = await _db.students.FindAsync(id);
-            _db.students.Remove(st);
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+
+            _db.students.Add(Student);
             await _db.SaveChangesAsync();
-
-            Message = "student deleted successully.";
-
+            Message = "Book has been created successfully!";
             return RedirectToPage("Index");
         }
     }
