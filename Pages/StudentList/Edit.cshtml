@@ -1,0 +1,53 @@
+﻿@page
+@model StudentRazorPage.Pages.StudentList.EditModel
+@{
+}
+
+
+<br />
+<h2>Edit Book</h2>
+
+<br />
+
+<div style="border:1px solid #bbb9b9; border-radius:10px;">
+    <form method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input hidden asp-for="Student.Id" />
+        <div class="row" style="padding:30px;">
+            <div class="form-group">
+                        <label asp-for="Student.Name"></label>
+                        <input asp-for="Student.Name" class="form-control" />
+                       <span asp-validation-for="Student.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                        <label asp-for="Student.Class"></label>
+                        <input asp-for="Student.Class" class="form-control" />
+                    <span asp-validation-for="Student.Class" class="text-danger"></span>
+            
+            </div>
+            <div class="form-group">
+                        <label asp-for="Student.address"></label>
+                        <input asp-for="Student.address" class="form-control" />
+                    <span asp-validation-for="Student.address" class="text-danger"></span>
+            
+            </div>
+            <div class="form-group">
+                        <label asp-for="Student.PhoneNumber"></label>                  
+                        <input asp-for="Student.PhoneNumber" class="form-control" />
+                    <span asp-validation-for="Student.PhoneNumber" class="text-danger"></span>
+            </div>
+           
+           <div class="form-group">
+               <label class="from-control"> </label>
+                <input type="submit" value="Update" class="btn btn-primary btn-sm" />
+                <a asp-page="Index" class="btn btn-success btn-sm">Back to List</a>
+           
+            </div>
+
+        </div>
+    </form>
+</div>
+
+@section Scripts{
+    @{await Html.RenderPartialAsync("_ValidationScriptsPArtial");}
+}
