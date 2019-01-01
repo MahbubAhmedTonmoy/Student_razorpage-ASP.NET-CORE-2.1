@@ -16,7 +16,7 @@ namespace StudentRazorPage.Pages.StudentList
         [TempData]
         public string Message { get; set; }
 
-        public IEnumerable<Student> students { get; set; }
+        public IEnumerable<Student> students { get; set; }// list of student from data base
 
 
         public IndexModel(ApplicationDbContext db)
@@ -26,7 +26,7 @@ namespace StudentRazorPage.Pages.StudentList
 
         public async Task OnGet()
         {
-            students = await _db.students.ToListAsync();
+            students = await _db.students.ToListAsync(); //IEnumerable<Student> students from database
         }
         public async Task<IActionResult> OnPostDelete(int id)
         {

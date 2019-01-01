@@ -7,6 +7,6 @@ namespace StudentRazorPage.Model
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options):base(options){
 
         }
-        public DbSet<Student> students {get;set;}
+        public DbSet<Student> students {get;set;} //add book table to database
     }
 }

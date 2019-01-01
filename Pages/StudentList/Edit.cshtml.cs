@@ -18,23 +18,27 @@ namespace StudentRazorPage.Pages.StudentList
 
         [BindProperty]
         public Student Student{get;set;}
+
         public void OnGet(int id)
         {
             Student = _db.students.Find(id);
         }
 
+        [TempData]
+        public string Message { get; set; }
+
        public async Task<IActionResult> OnPost()
         {
             if(ModelState.IsValid)
             {
-                var stdFromDb = _db.students.Find(Student.Id);
+                var stdFromDb = _db.students.Find(Student.Id); // find student object from database
                 stdFromDb.Name = Student.Name;
                 stdFromDb.Class = Student.Class;
                 stdFromDb.address = Student.address;
                 stdFromDb.PhoneNumber = Student.PhoneNumber;
                 
                 await _db.SaveChangesAsync();
-                //Message = "Book has been updated successfully";
+                Message = "Student information has been updated successfully";
 
                 return RedirectToPage("Index");
             }

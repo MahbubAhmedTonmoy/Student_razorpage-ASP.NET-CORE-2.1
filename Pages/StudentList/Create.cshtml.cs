@@ -10,18 +10,19 @@ namespace StudentRazorPage.Pages.StudentList
 {
 public class CreateModel : PageModel
     {
-        
-        private readonly ApplicationDbContext _db;
+       // use dependency injection 
+        private readonly ApplicationDbContext _db; //object of ApplicationDbCOntext cz access to database
 
         [TempData]
         public string Message { get; set; }
 
-        public CreateModel(ApplicationDbContext db)
+        // use dependency injection so create a constructor
+        public CreateModel(ApplicationDbContext db) //ctor short form of constructor
         {
             _db = db;
         }
 
-        [BindProperty]
+        [BindProperty] // or  public async Task<IActionResult> OnPost(Student Student)
         public Student Student { get; set; }
 
         public void OnGet()
@@ -29,16 +30,16 @@ public class CreateModel : PageModel
 
         }
 
-        public async Task<IActionResult> OnPost()
+        public async Task<IActionResult> OnPost() // submit 
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid) //check Book model validation recquired 
             {
                 return Page();
             }
 
-            _db.students.Add(Student);
+            _db.students.Add(Student); 
             await _db.SaveChangesAsync();
-            Message = "Book has been created successfully!";
+            Message = "Student has been created successfully!";
             return RedirectToPage("Index");
         }
     }
