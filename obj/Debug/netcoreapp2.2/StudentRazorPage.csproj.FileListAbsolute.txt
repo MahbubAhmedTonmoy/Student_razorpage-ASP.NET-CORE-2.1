@@ -31,3 +31,4 @@ C:\Users\mahbub\Desktop\StudentRazorPage\obj\Debug\netcoreapp2.2\StudentRazorPag
 C:\Users\mahbub\Desktop\StudentRazorPage\obj\Debug\netcoreapp2.2\Razor\Pages\StudentList\Create.g.cshtml.cs
 C:\Users\mahbub\Desktop\StudentRazorPage\obj\Debug\netcoreapp2.2\Razor\Pages\StudentList\Index.g.cshtml.cs
 C:\Users\mahbub\Desktop\StudentRazorPage\obj\Debug\netcoreapp2.2\Razor\Pages\StudentList\Edit.g.cshtml.cs
+C:\Users\mahbub\Desktop\StudentRazorPage\obj\Debug\netcoreapp2.2\Razor\Pages\StudentList\Details.g.cshtml.cs
